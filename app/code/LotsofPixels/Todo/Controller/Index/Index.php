@@ -12,4 +12,3 @@ class Index extends Action
         return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
     }
 }
-}
