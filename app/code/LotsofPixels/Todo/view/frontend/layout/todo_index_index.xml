@@ -7,5 +7,10 @@
                 <argument name="title" xsi:type="string" translate="true">My Todo List</argument>
             </action>
         </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="lotsofpixels.todo.block.list"
+                   template="LotsofPixels_Todo::todo.phtml" />
+        </referenceContainer>
     </body>
 </page>
