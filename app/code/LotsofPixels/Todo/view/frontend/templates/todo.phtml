@@ -8,6 +8,9 @@ use Magento\framework\View\Element\Template;
     <li>Two</li>
     <li>Three</li>
 </ul>
+<div data-bind="scope: 'todo'">
+    <!-- ko template: getTemplate() --> <!-- /ko -->
+</div>
 <script type="text/x-magento-init">
     {
         "*":{
