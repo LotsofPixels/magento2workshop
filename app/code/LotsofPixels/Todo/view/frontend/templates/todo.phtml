@@ -14,19 +14,7 @@ use Magento\framework\View\Element\Template;
 <script type="text/x-magento-init">
     {
         "*":{
-            "Magento_Ui/js/core/app": {
-                "components": {
-                    "todo": {
-                        "component": "LotsofPixels_Todo/js/view/todo",
-                        "template": "LotsofPixels_Todo/todo",
-                        "tasks": [
-                        {"label": "Task 11"},
-                        {"label": "Task 12"},
-                        {"label": "Task 13"}
-                        ]
-                    }
-                }
-            }
+            "Magento_Ui/js/core/app": <?= $block->getJsLayout(); ?>
         }
     }
 </script>
