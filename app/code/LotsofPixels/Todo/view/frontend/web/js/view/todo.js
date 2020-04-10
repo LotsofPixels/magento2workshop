@@ -9,6 +9,16 @@ define(['uiComponent'], function (Component) {
              {label: "Taak 3"},
              {label: "Taak 4"},
           ]
-    }
+    },
+
+        initObservable: function () {
+            this._super().observe(['tasks']);
+
+            this.tasks().push({label: 'Taak 5'});
+
+            return this;
+
+        },
     });
 });
+
