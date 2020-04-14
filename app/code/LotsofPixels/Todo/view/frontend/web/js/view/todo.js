@@ -7,10 +7,10 @@ define([
     return Component.extend({
         defaults: {
             tasks: [
-             {id:1, label: "Taak 1", status: false},
-             {id:2, label: "Taak 2", status: false},
-             {id:3, label: "Taak 3", status: false},
-             {id:4, label: "Taak 4", status: true},
+             {id: 1, label: "Taak 1", status: false},
+             {id: 2, label: "Taak 2", status: false},
+             {id: 3, label: "Taak 3", status: false},
+             {id: 4, label: "Taak 4", status: true},
           ],
     },
 
@@ -27,12 +27,28 @@ define([
                 if (task.id === taskId) {
                     task.status = !task.status;
                 }
-                return task;
+                return task
             });
 
             this.tasks(items);
-
         },
+        
+        deleteTask:  function (taskId) {
+            var tasks = [];
+
+            if (this.tasks().length === 1) {
+                this.tasks(tasks);
+                return;
+            }
+
+            this.tasks().forEach(function (task) {
+                if (task.id !== taskId) {
+                    tasks.push(task);
+                }
+            });
+            
+            this.tasks(tasks);
+            },
     });
 });
 
