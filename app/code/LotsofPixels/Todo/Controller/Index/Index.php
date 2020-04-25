@@ -7,6 +7,7 @@ namespace LotsofPixels\Todo\Controller\Index;
 use LotsofPixels\Todo\Model\ResourceModel\Task as TaskResource;
 use LotsofPixels\Todo\Model\Task;
 use LotsofPixels\Todo\Model\TaskFactory;
+use LotsofPixels\Todo\Service\TaskRepository;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\Controller\ResultFactory;
@@ -17,25 +18,34 @@ class Index extends Action
 
     private $taskFactory;
 
-    public function __construct(Context $context, TaskFactory $taskFactory, TaskResource $task)
-    {
+    private $taskRepository;
+
+    public function __construct(
+        Context $context,
+        TaskFactory $taskFactory,
+        TaskResource $taskResource,
+        TaskRepository $taskRepository;
+    ) {
         $this->taskFactory = $taskFactory;
-        $this->taskResource = $task;
+        $this->taskResource = $taskResource;
+        $this->taskRepository = $TaskRepository;
         parent::__construct($context);
     }
 
     public function execute()
     {
-        /** @var Task $task */
-        $task = $this->taskFactory->create();
+        var_dump($this->taskRepository->get(1)->getData());
 
-        $task->setData([
-            'label' => 'New Task 3',
-            'status' => 'open',
-            'customer_id' => 1
-        ]);
-
-        $this->taskResource->save($task);
+        //       /** @var Task $task */
+//        $task = $this->taskFactory->create();
+//
+//        $task->setData([
+//            'label' => 'New Task 3',
+//            'status' => 'open',
+//            'customer_id' => 1
+//        ]);
+//
+//        $this->taskResource->save($task);
         return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
     }
 }
