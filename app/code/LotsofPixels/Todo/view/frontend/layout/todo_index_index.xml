@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="customer_account"/>
     <head>
@@ -7,22 +7,22 @@
     <body>
         <referenceBlock name="page.main.title">
             <action method="setPageTitle">
-                <argument name="title" xsi:type="string" translate="true">My Todo List</argument>
+                <argument translate="true" name="title" xsi:type="string">My TODO List</argument>
             </action>
         </referenceBlock>
         <referenceContainer name="content">
             <block class="Magento\Framework\View\Element\Template"
                    name="lotsofpixels.todo.block.list"
-                   template="LotsofPixels_Todo::todo.phtml" >
+                   template="LotsofPixels_Todo::todo.phtml">
                 <arguments>
                     <argument name="jsLayout" xsi:type="array">
-                    <item name="components" xsi:type="array">
-                        <item name="todo" xsi:type="array">
-                            <item name="component" xsi:type="string">LotsofPixels_Todo/js/view/todo</item>
-                            <item name="template" xsi:type="string">LotsofPixels_Todo/todo</item>
+                        <item name="components" xsi:type="array">
+                            <item name="todo" xsi:type="array">
+                                <item name="component" xsi:type="string">LotsofPixels_Todo/js/view/todo</item>
+                                <item name="template" xsi:type="string">LotsofPixels_Todo/todo</item>
+                            </item>
                         </item>
-                    </item>
-                </argument>
+                    </argument>
                 </arguments>
             </block>
         </referenceContainer>

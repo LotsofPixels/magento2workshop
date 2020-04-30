@@ -1,15 +1,16 @@
 <?php
-use Magento\framework\View\Element\Template;
-/** @var Template $block */
-?>
-<h1>the todo page </h1>
 
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+
+?>
 <div data-bind="scope: 'todo'">
-    <!-- ko template: getTemplate() --> <!-- /ko -->
+    <!-- ko template: getTemplate() --><!-- /ko -->
 </div>
 <script type="text/x-magento-init">
     {
-        "*":{
+        "*": {
             "Magento_Ui/js/core/app": <?= $block->getJsLayout(); ?>
         }
     }

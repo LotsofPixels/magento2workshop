@@ -6,12 +6,10 @@
                    name="customer-account-navigation-todo-link">
                 <arguments>
                     <argument name="path" xsi:type="string">todo</argument>
-                    <argument name="label" xsi:type="string" translate="true">My Todo list</argument>
-                    <argument name="sortOrder" xsi:type="number">1200</argument>
+                    <argument name="label" xsi:type="string" translate="true">My TODO List</argument>
+                    <argument name="sortOrder" xsi:type="number">220</argument>
                 </arguments>
-
             </block>
         </referenceBlock>
     </body>
-
 </page>

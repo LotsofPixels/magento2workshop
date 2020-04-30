@@ -24,17 +24,19 @@ class Index extends Action
         Context $context,
         TaskFactory $taskFactory,
         TaskResource $taskResource,
-        TaskRepository $taskRepository;
+        TaskRepository $taskRepository
     ) {
         $this->taskFactory = $taskFactory;
         $this->taskResource = $taskResource;
-        $this->taskRepository = $TaskRepository;
+        $this->taskRepository = $taskRepository;
         parent::__construct($context);
     }
 
     public function execute()
     {
-        var_dump($this->taskRepository->get(1)->getData());
+        $task = $this->taskRepository->get(1);
+
+        var_dump($task);
 
         //       /** @var Task $task */
 //        $task = $this->taskFactory->create();

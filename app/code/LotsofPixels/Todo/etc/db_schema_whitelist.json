@@ -8,7 +8,7 @@
         },
         "constraint": {
             "PRIMARY": true,
-            "LOTSOFPIXELS_TODO_TASK_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID": true
+            "MAGEMASTERY_TODO_TASK_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID": true
         }
     }
 }
