@@ -19,5 +19,5 @@ interface TaskSearchResultInterface extends SearchResultsInterface
     /**
      * @param TaskInterface[] $items
      */
-    public function setItems(array $items = null);
+    public function setItems(array $items);
 }
