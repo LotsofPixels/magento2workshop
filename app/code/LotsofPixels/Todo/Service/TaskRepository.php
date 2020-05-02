@@ -4,9 +4,13 @@ declare(strict_types=1);
 
 namespace LotsofPixels\Todo\Service;
 
+use LotsofPixels\Todo\Api\Data\TaskSearchResultInterface;
+use LotsofPixels\Todo\Api\Data\TaskSearchResultInterfaceFactory;
 use LotsofPixels\Todo\Api\TaskRepositoryInterface;
 use LotsofPixels\Todo\Model\ResourceModel\Task;
 use LotsofPixels\Todo\Model\TaskFactory;
+use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
+use Magento\Framework\Api\SearchCriteriaInterface;
 
 class TaskRepository implements TaskRepositoryInterface
 {
@@ -21,19 +25,42 @@ class TaskRepository implements TaskRepositoryInterface
     private $taskFactory;
 
     /**
+     * @var SearchResultsInterfaceFactory
+     */
+    private $searchResultsFactory;
+
+    /**
+     * @var CollectionProcessorInterface
+     */
+    private $collectionProcessor;
+
+    /**
      * TaskRepository constructor.
      * @param Task $resource
      * @param TaskFactory $taskFactory
+     * @param CollectionProcessorInterface $collectionProcessor
+     * @param TaskSearchResultInterfaceFactory $searchResultFactory
      */
-    public function __construct(Task $resource, TaskFactory $taskFactory)
-    {
+    public function __construct(
+        Task $resource,
+        TaskFactory $taskFactory,
+        CollectionProcessorInterface $collectionProcessor,
+        TaskSearchResultInterface $searchResultFactory
+    ) {
         $this->resource = $resource;
         $this->taskFactory = $taskFactory;
+        $this->collectionProcessor = $collectionProcessor;
+        $this->searchResultsFactory = $searchResultFactory;
     }
 
-    public function getList()
+    public function getList(SearchCriteriaInterface $searchCriteria): TaskSearchResultInterface
     {
-        // TODO: Implement getList() method.
+        $searchResult = $this->searchResultsFactory->create();
+        $searchResult->setSearchCriteria($searchCriteria);
+
+        $this->collectionProcessor->process($searchCriteria, $searchResult);
+
+        return $searchResult;
     }
 
     public function get(int $taskId)
