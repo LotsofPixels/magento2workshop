@@ -5,5 +5,6 @@
     <preference for="LotsofPixels\Todo\Api\TaskRepositoryInterface" type="LotsofPixels\Todo\Service\TaskRepository"/>
     <preference for="LotsofPixels\Todo\Api\Data\TaskInterface" type="LotsofPixels\Todo\Model\Task"/>
 
-    <preference for="\LotsofPixels\Todo\Api\Data\TaskSearchResultInterface" type="LotsofPixels\Todo\Api\Data\TaskSearchResultInterface"/>
+    <preference for="LotsofPixels\Todo\Api\Data\TaskSearchResultInterface" type="LotsofPixels\Todo\Api\Data\TaskSearchResultInterface"/>
+    <preference for="LotsofPixels\Todo\Api\CustomerTaskInterface" type="LotsofPixels\Todo\Service\CustomerTaskList"/>
 </config>
