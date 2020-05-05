@@ -4,6 +4,6 @@
     <preference for="LotsofPixels\Todo\Api\TaskManagementInterface" type="LotsofPixels\Todo\Service\TaskManagement"/>
     <preference for="LotsofPixels\Todo\Api\TaskRepositoryInterface" type="LotsofPixels\Todo\Service\TaskRepository"/>
     <preference for="LotsofPixels\Todo\Api\Data\TaskInterface" type="LotsofPixels\Todo\Model\Task"/>
-    
+
     <preference for="\LotsofPixels\Todo\Api\Data\TaskSearchResultInterface" type="LotsofPixels\Todo\Api\Data\TaskSearchResultInterface"/>
 </config>
